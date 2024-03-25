@@ -21,4 +21,3 @@ A simple Python program to check open ports on a given IP or domain.
 ## Limitations
 
 * Uses a 1-second timeout
-* No input validation
