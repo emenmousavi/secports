@@ -21,22 +21,36 @@ def check_port_range(start, end, ip='127.0.0.1'):
             return True
     return False
 
+def get_int_input(prompt, min_val=None, max_val=None):
+    """
+    Get integer input from user with optional validation.
+    """
+    while True:
+        try:
+            val = int(input(prompt))
+            if (min_val is not None and val < min_val) or (max_val is not None and val > max_val):
+                print(f'Invalid input. Enter a value between {min_val} and {max_val}.')
+            else:
+                return val
+        except ValueError:
+            print('Invalid input. Enter a number.')
+
 def main():
     ip = input('Enter the IP address or domain: ')
     print('Choose an option:')
     print('1. Check a special port')
     print('2. Check a port range')
     print('3. Check the first 1000 ports')
-    option = int(input('Enter the option number: '))
+    option = get_int_input('Enter the option number: ', 1, 3)
     if option == 1:
-        port = int(input('Enter the port number: '))
+        port = get_int_input('Enter the port number: ')
         if check_port(port, ip):
             print(f'Port {port} is open')
         else:
             print(f'Port {port} is closed')
     elif option == 2:
-        start = int(input('Enter the start of the range: '))
-        end = int(input('Enter the end of the range: '))
+        start = get_int_input('Enter the start of the range: ')
+        end = get_int_input('Enter the end of the range: ')
         if check_port_range(start, end, ip):
             print(f'A port in the range {start}-{end} is open')
         else:
