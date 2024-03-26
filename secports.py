@@ -19,6 +19,35 @@ def scan_target(target, start_port, end_port):
             executor.submit(check_port, target, port)
 
 if __name__ == "__main__":
+    print("""
+    Welcome to SecPorts
+
+                                       `
+                              (         (
+                               )      (
+                             )          )
+                            (          ( ,
+                           _ _)_      .-Y.
+                .--._ _.--'.',T.\_.--' (_)`.
+              .'_.   `  _.'  `-'    __._.--;
+             /.'  `.  -'     ___.--' ,--.  :       o       ,-. _
+            : |  xX|       ,'  .-'`.(   |  '      (   o  ,' .-' `,
+           :  `.  .'    ._'-,  \   | \  ||/        `.{  / .'    :
+          .;    `'    ,',\|\|   \  |  `.;'     .__(()`./.'  _.-'
+          ;           |   ` `    \.'|\\ :      ``.-. _ '_.-'
+         .'           ` /|,         `|\\ \        -'' \  \
+         :             \`/|,-.       `|\\ :         ,-'| `-.
+         :        _     \`/  |   _   .^.'\ \          -'> \_
+         `;      --`-.   \`._| ,' \  |  \ : \           )`.\`-
+          :.      .---\   \   ,'   | '   \ : .          `  `.\_,/
+           :.        __\   `. :    | `-.-',  :               `-'
+           `:.     -'   `.   `.`---'__.--'  /
+            `:         __.\    `---'      _'
+             `:.     -'    `.       __.--'
+              `:.          __`--.--'\
+         -bf-  `:.      --'     __   `.
+    """)
+
     logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
     target = input("Enter IP address or domain: ")
