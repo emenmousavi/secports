@@ -8,7 +8,7 @@ SecPorts is a Python tool for scanning open ports on a target machine.
 #### Usage
 1. Clone the repository:
    ```
-   git clone https://github.com/your_username/SecPorts.git
+   git clone https://github.com/emenmousavi/secports
    ```
 2. Navigate to the SecPorts directory:
    ```
